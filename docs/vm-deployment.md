@@ -2,17 +2,24 @@
 
 ## Objective
 
-Create and deploy VM with Linux Server with having a best size and storage fot it. And apply the Networking i create to it and setup SSH and NGINX installation.
+1. Create and deploy VM with Linux Server with having a best size and storage fot it. And apply the Networking i create to it and setup SSH and NGINX installation.
+
+2. Create and deploy VM with Windows Server in backend side, which is not facing the public figures. So wihtout enabling the public ip, it have private and I will connect to Windwos VM by using Bastion.
 
 ## Network Architecture
 
-VM specs:
+VM specs (Linux & Windows):
 - Size (B-Series V2)
 - Storage (Standard SSD (LRS))
 
-Network:
+Network (Linux):
 - Attach to NSG frontend (Public Resources)
 - Allow  SSH and HTTP(for NGINX)
+
+Network (Windows):
+- Attach to NSG backend (Backend/Private Side)
+- No public ip, only Private
+- Bastion enabled
 
 ## Design Decisions
 
@@ -20,8 +27,9 @@ Network:
 - No redundancy required and Standard Security type only
 - For Storage Standard SSD was fine and using a disk size by default because this is for LAB only.
 - The Virtual Network was Automatically attach because of being in Same region
-- After Deploy the VM, i connect to it using powershell and use SSH and install a NGINX
-- I allow for my nsg-frontend the http, so i can test in browse if my NGINX is active
+- After Deploy the VM, i connect to it using powershell and use SSH and install a NGINX (Linux)
+- I allow for my nsg-frontend the http, so i can test in browse if my NGINX is active (Linux)
+- After not allowing any public ip in my Windows Server, I enabled the Bastion for my connection for it (Linux)
 
 ## Expected Learnings
 
