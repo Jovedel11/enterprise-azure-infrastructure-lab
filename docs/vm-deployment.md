@@ -1,4 +1,4 @@
-# Enterprise Azure Infrastructure Lab - Networking Phase
+# Enterprise Azure Infrastructure Lab - Compute Phase
 
 ## Objective
 
@@ -10,13 +10,18 @@ VM specs:
 - Size (B-Series V2)
 - Storage (Standard SSD (LRS))
 
+Network:
+- Attach to NSG frontend (Public Resources)
+- Allow  SSH and HTTP(for NGINX)
+
 ## Design Decisions
 
 - For size, B-Series was perfect because, for only using AZ Student I priritize the cost so that's why I run it with AZ Spot Discount also, this was good because I only creating this for my LAB/Personal Project.
 - No redundancy required and Standard Security type only
 - For Storage Standard SSD was fine and using a disk size by default because this is for LAB only.
 - The Virtual Network was Automatically attach because of being in Same region
-- After Deploy the VM, i connect it using SSh and install a NGINX
+- After Deploy the VM, i connect to it using powershell and use SSH and install a NGINX
+- I allow for my nsg-frontend the http, so i can test in browse if my NGINX is active
 
 ## Expected Learnings
 
@@ -25,3 +30,4 @@ VM specs:
 - Network implementation
 - NSG Implementation
 - SSH, NGINX
+- NSG security rules.
