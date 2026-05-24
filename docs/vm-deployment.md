@@ -1,4 +1,4 @@
-# Enterprise Azure Infrastructure Lab - Compute Phase
+# Enterprise Azure Infrastructure Lab - Compute Phase (VMs)
 
 ## Objective
 
@@ -6,7 +6,7 @@
 
 2. Create and deploy VM with Windows Server in backend side, which is not facing the public figures. So wihtout enabling the public ip, it have private and I will connect to Windwos VM by using Bastion.
 
-## Network Architecture
+## Compute Architecture
 
 VM specs (Linux & Windows):
 - Size (B-Series V2)
